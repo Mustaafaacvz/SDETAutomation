@@ -20,7 +20,7 @@ public class PracticeFormSubmission {
         // Locate the 'Forms' section card on the homepage and click on it
         WebElement form = driver.findElement(By.xpath("//div[@class='card mt-4 top-card'][2]"));
         //form.click(); exception hatası verdi bunu kullanamadım ama çalıştığı da olabiliyor
-        // Aşağıdakşni kullandık o yüzden
+        // Aşağıdakini kullandık o yüzden
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", form);
 
         // Locate the 'Practice Form' link and check if it is displayed
@@ -67,7 +67,7 @@ public class PracticeFormSubmission {
         System.out.println("Header Text is: " + headerText);
 
         // Close the browser after execution
-         driver.quit();
+         //driver.quit();
 
 
     }
