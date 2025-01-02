@@ -46,12 +46,9 @@ public class BrowserStackDemoSeleniumTask1 {
                                                    //By.xpath("//div[contains(text(),'Add to cart')]")  -->xpath form
 
        System.out.println("Buy button counts: " + buyButton.size());
+        //Click the first button you find.
+        buyButton.get(0).click();
 
-       Thread.sleep(2000);
-
-       //Click the first button you find.
-       WebElement addtocart = driver.findElement(By.xpath("//div[contains(text(),'Add to cart')]"));
-       addtocart.click();
 
        //Use CSS Selectors to locate the Sign In button.
        Thread.sleep(3000);
@@ -119,7 +116,7 @@ public class BrowserStackDemoSeleniumTask1 {
         //Validate that the Sign In button is displayed, confirming successful logout.
         WebElement signIn = driver.findElement(By.cssSelector("a#signin"));
         boolean signInValidate = signIn.isDisplayed();
-        System.out.println("Successfully logged out " + signInValidate);
+        System.out.println("Successfully logged out: " + signInValidate);
 
         Thread.sleep(3000);
         driver.quit();
