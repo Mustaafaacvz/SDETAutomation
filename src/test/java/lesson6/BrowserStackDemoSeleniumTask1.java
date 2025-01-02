@@ -46,7 +46,7 @@ public class BrowserStackDemoSeleniumTask1 {
                                                    //By.xpath("//div[contains(text(),'Add to cart')]")  -->xpath form
 
        System.out.println("Buy button counts: " + buyButton.size());
-        //Click the first button you find.
+        //Click the fourth button you find.
         buyButton.get(3).click();
 
 
