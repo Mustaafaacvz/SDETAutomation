@@ -16,7 +16,7 @@ public class BrowserStackDemoSeleniumTask1 {
 
 
         //WebElement productcounts = driver.findElement(By.xpath("//*[@class='shelf-item']"));
-        //Bu xpath yazımı.
+        //xpath form.
 
         //Count the elements and print the count.
         List<WebElement> productcount = driver.findElements(By.cssSelector(".shelf-item"));
@@ -47,7 +47,7 @@ public class BrowserStackDemoSeleniumTask1 {
 
        System.out.println("Buy button counts: " + buyButton.size());
         //Click the first button you find.
-        buyButton.get(0).click();
+        buyButton.get(3).click();
 
 
        //Use CSS Selectors to locate the Sign In button.
