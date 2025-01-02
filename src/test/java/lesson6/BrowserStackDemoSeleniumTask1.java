@@ -19,12 +19,7 @@ public class BrowserStackDemoSeleniumTask1 {
         //Bu xpath yazımı.
 
         //Count the elements and print the count.
-        List<WebElement> productcount = driver.findElements(
-
-                new ByAll(
-                        By.cssSelector(".shelf-item")
-                )
-        );
+        List<WebElement> productcount = driver.findElements(By.cssSelector(".shelf-item"));
 
         System.out.println("Total product counts: " + productcount.size());
 
@@ -36,12 +31,7 @@ public class BrowserStackDemoSeleniumTask1 {
         System.out.println("25 Product(s) found. is displayed: " + validate);
 
         //Count and print the total number of iPhones.
-        List<WebElement> iPhone = driver.findElements(
-
-        new ByAll(
-                By.xpath("//div/p[contains(text(),'iPhone')]")
-        )
-);
+        List<WebElement> iPhone = driver.findElements(By.xpath("//div/p[contains(text(),'iPhone')]"));
         System.out.println("Count of iPhone models: " + iPhone.size());
 
         //Extract and print the name of each iPhone model.
@@ -52,13 +42,8 @@ public class BrowserStackDemoSeleniumTask1 {
        }
 
        //Count and print the total number of  all "Add to cart" buttons.
-       List<WebElement> buyButton = driver.findElements(
-
-               new ByAll(
-               By.cssSelector("div.shelf-item__buy-btn")
-               //By.xpath("//div[contains(text(),'Add to cart')]")  -->bu xpath formu örnek
-               )
-       );
+       List<WebElement> buyButton = driver.findElements(By.cssSelector("div.shelf-item__buy-btn"));
+                                                   //By.xpath("//div[contains(text(),'Add to cart')]")  -->xpath form
 
        System.out.println("Buy button counts: " + buyButton.size());
 
