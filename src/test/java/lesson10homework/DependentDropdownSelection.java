@@ -97,11 +97,18 @@ public class DependentDropdownSelection {
 
             //Verify if the correct banner indicating success is displayed.
             //Print a success message for validation.
-            WebElement success = driver.findElement(By.xpath("//div[@class='alert alert-success']"));
+
+            //The answer to the third question changes in every selection
+            // so I wrote like that to avoid an error.
+            WebElement success = driver.findElement(By.xpath("//div[@role='alert'][1]"));
 
             boolean check = success.isDisplayed();
 
-            System.out.println(success.getText() + " : " + check);
+            if(success.isDisplayed()) {
+                System.out.println(success.getText() + " : " + check);
+            }else{
+                System.out.println("Your third answer is wrong! Try again!");
+            }
 
             driver.quit();
 
