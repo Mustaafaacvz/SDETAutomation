@@ -17,9 +17,9 @@ public class AdvancedMouseAndKeyboardActions {
 
         dragANDdrop();
 
-        demoQAButton();
+        //demoQAButton();
 
-        demoQATips();
+        //demoQATips();
 
     }
     public static void dragANDdrop() {
@@ -27,7 +27,13 @@ public class AdvancedMouseAndKeyboardActions {
         WebDriver driver = new ChromeDriver();
         driver.get("https://jqueryui.com/droppable/#default");
 
+        // adding implicit wait of 10 secs
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         driver.manage().window().maximize();
+        //I got an StaleElementException error in my first try.
+        //I refreshed the page and didn't get that error again.
+        driver.navigate().refresh();
 
         // Switch to iframe containing drag and drop elements
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
