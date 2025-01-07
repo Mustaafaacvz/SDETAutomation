@@ -13,13 +13,13 @@ import java.time.Duration;
 
 public class AdvancedMouseAndKeyboardActions {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args)  {
 
-        //dragANDdrop();
+        dragANDdrop();
 
         //demoQAButton();
 
-        demoQATips();
+        //demoQATips();
 
     }
     public static void dragANDdrop() {
@@ -29,8 +29,10 @@ public class AdvancedMouseAndKeyboardActions {
 
         driver.manage().window().maximize();
 
+        // Switch to iframe containing drag and drop elements
+        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
+
         //Drag the source box into the target box and validate the success message.
-        //İlgili locator'ları bulamadım hiçbir yöntemle çözemedim ama gördüğüm kadarıyla draganddrop kullanımı bu şekilde.
         WebElement sourceBox = driver.findElement(By.id("draggable"));
         WebElement targetBox = driver.findElement(By.id("droppable"));
 
@@ -39,6 +41,9 @@ public class AdvancedMouseAndKeyboardActions {
         builder.dragAndDrop(sourceBox, targetBox).build().perform();
 
         System.out.println(targetBox.getText());
+
+        // Switch back to the main content
+        driver.switchTo().defaultContent();
 
         //Close the browser
         driver.quit();
@@ -59,15 +64,14 @@ public class AdvancedMouseAndKeyboardActions {
         //Double-click on the "Double Click Me" button and validate the success message.
         //Right-click on the "Right Click Me" button and validate the success message.
         //Click on the "Click Me" button and validate the success message.
-        //Click me butonun locator'ını bulamadı bir türlü çözemedim?(id, CSS selector, xpath hepsini denedim)
         WebElement doubleClick = driver.findElement(By.id("doubleClickBtn"));
 
         WebElement rightClick = driver.findElement(By.id("rightClickBtn"));
 
-        //WebElement clickMe = driver.findElement(By.xpath("//button[@id='dRDu6']"));
+        WebElement clickMe = driver.findElement(By.xpath("(//button[@type='button'])[4]"));
 
         Actions builder = new Actions(driver);
-        builder.doubleClick(doubleClick).contextClick(rightClick).perform();
+        builder.doubleClick(doubleClick).contextClick(rightClick).click(clickMe).perform();
 
         WebElement doubleClickMessage = driver.findElement(By.id("doubleClickMessage"));
 
@@ -77,9 +81,9 @@ public class AdvancedMouseAndKeyboardActions {
 
         System.out.println(rightClickMessage.getText());
 
-        //WebElement dynamicClickMessage = driver.findElement(By.id("dynamicClickMessage"));
+        WebElement dynamicClickMessage = driver.findElement(By.id("dynamicClickMessage"));
 
-       // System.out.println(rightClickMessage.getText());
+        System.out.println(rightClickMessage.getText());
 
 
         //Close the browser
