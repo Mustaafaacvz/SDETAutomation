@@ -17,9 +17,9 @@ public class AdvancedMouseAndKeyboardActions {
 
         dragANDdrop();
 
-        //demoQAButton();
+        demoQAButton();
 
-        //demoQATips();
+        demoQATips();
 
     }
     public static void dragANDdrop() {
@@ -125,7 +125,8 @@ public class AdvancedMouseAndKeyboardActions {
             System.out.println("It is NOT displayed.");
         }
 
-
+        //Close the browser
+        driver.quit();
 
     }
 
