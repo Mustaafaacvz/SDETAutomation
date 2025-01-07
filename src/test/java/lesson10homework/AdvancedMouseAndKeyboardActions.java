@@ -17,9 +17,9 @@ public class AdvancedMouseAndKeyboardActions {
 
         dragANDdrop();
 
-        //demoQAButton();
+        demoQAButton();
 
-        //demoQATips();
+        demoQATips();
 
     }
     public static void dragANDdrop() {
