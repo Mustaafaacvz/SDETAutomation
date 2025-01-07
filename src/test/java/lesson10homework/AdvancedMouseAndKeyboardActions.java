@@ -89,7 +89,7 @@ public class AdvancedMouseAndKeyboardActions {
 
         WebElement dynamicClickMessage = driver.findElement(By.id("dynamicClickMessage"));
 
-        System.out.println(rightClickMessage.getText());
+        System.out.println(dynamicClickMessage.getText());
 
 
         //Close the browser
