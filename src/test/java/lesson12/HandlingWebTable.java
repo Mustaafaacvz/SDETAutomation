@@ -38,6 +38,6 @@ public class HandlingWebTable {
         }
 
         // Closing browser
-         driver.quit();
+         //driver.quit();
     }
 }
